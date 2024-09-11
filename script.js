@@ -29,22 +29,29 @@ function randomNumber() {
 }
 
 function setColor() {
-    const r = document.getElementById('red').value;
-    const g = document.getElementById('green').value;
-    const b = document.getElementById('blue').value;
-    document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+    const red = document.getElementById('red').value;
+    const green = document.getElementById('green').value;
+    const blue = document.getElementById('blue').value;
+    document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}
+
+function setColorFromPicker() {
+    const colorPicker = document.getElementById('color-picker');
+    document.body.style.backgroundColor = colorPicker.value;
 }
 
 function randomColor() {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    
-    
-    document.getElementById('red').value = r;
-    document.getElementById('green').value = g;
-    document.getElementById('blue').value = b;
-    
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    document.getElementById('red').value = red;
+    document.getElementById('green').value = green;
+    document.getElementById('blue').value = blue;
+    setColor();
+}
 
-    document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+// Ny funksjon for å endre bakgrunnsfarge basert på tekstinput
+function setColorFromTextInput() {
+    const colorText = document.getElementById('colorTextInput').value;
+    document.body.style.backgroundColor = colorText;
 }
